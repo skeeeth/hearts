@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cthet31xvhrd"]
+[gd_scene load_steps=4 format=3 uid="uid://c2r7w60blrtbh"]
 
-[ext_resource type="Script" path="res://src/deck/deck.gd" id="1_hk425"]
+[ext_resource type="Script" path="res://deck/deck.gd" id="1_w2isr"]
+[ext_resource type="Texture2D" uid="uid://ca1bxqpa33uuq" path="res://Assets/cardsLarge_tilemap_packed.png" id="2_mnrh2"]
 
-[node name="Deck" type="Node2D"]
-script = ExtResource("1_hk425")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy708"]
+atlas = ExtResource("2_mnrh2")
+region = Rect2(845, 64.5, 37, 59)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_w2isr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_xy708")
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bktlw4lk2xyxp"]
+[gd_scene load_steps=2 format=3 uid="uid://bktlw4lk2xyxp"]
+
+[ext_resource type="PackedScene" uid="uid://c2r7w60blrtbh" path="res://deck/deck.tscn" id="1_opkua"]
 
 [node name="Game" type="Node"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_opkua")]
+position = Vector2(292, 150)
